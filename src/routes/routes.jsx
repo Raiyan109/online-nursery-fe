@@ -1,8 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
-import Login from "../pages/Login";
-import SignUp from "../pages/SignUp";
-import ForgotPassword from "../pages/ForgotPassword";
+import ProductDetails from "../components/ProductDetails";
+import AllProducts from "../pages/AllProducts";
+import Dashboard from "../pages/Dashboard";
+import ProductTable from "../components/ProductTable";
+import AddProduct from "../components/AddProduct";
+import Cart from "../pages/Cart";
+import OrderSummary from "../pages/OrderSummary";
+import Success from "../pages/Success";
+
 
 const routes = createBrowserRouter([
     {
@@ -10,18 +16,39 @@ const routes = createBrowserRouter([
         element: <Home />
     },
     {
-        path: '/login',
-        element: <Login />
+        path: '/:id',
+        element: <ProductDetails />
     },
     {
-        path: '/signUp',
-        element: <SignUp />
+        path: '/allProducts',
+        element: <AllProducts />
     },
     {
-        path: '/forgot-password',
-        element: <ForgotPassword />
+        path: '/dashboard',
+        element: <Dashboard />,
+        children: [
+            {
+                path: '/dashboard',
+                element: <ProductTable />,
+            },
+            {
+                path: 'addProduct',
+                element: <AddProduct />,
+            }
+        ]
     },
-
+    {
+        path: '/cart',
+        element: <Cart />
+    },
+    {
+        path: '/order',
+        element: <OrderSummary />
+    },
+    {
+        path: '/success',
+        element: <Success />
+    },
 ])
 
 export default routes
