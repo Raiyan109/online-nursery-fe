@@ -1,5 +1,5 @@
 import { useGetProductDetailsQuery } from "@/redux/features/productApi";
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import Loading from "./Loading";
 import Navbar from "./Navbar";
 
@@ -12,6 +12,7 @@ const ProductDetails = () => {
     const { id } = useParams();
     const { data, isLoading } = useGetProductDetailsQuery(id);
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     if (isLoading) {
         return <div>
@@ -21,7 +22,7 @@ const ProductDetails = () => {
 
     const handleAddToCart = (item) => {
         dispatch(addToCart(item))
-        console.log(item);
+        navigate('/cart')
     }
 
     return (

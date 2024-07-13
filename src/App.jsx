@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div>
-      <Toaster />
+      <Toaster richColors />
       <RouterProvider router={routes} />
     </div>
   )

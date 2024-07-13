@@ -16,15 +16,24 @@ const cartSlice = createSlice({
     reducers: {
         addToCart: (state, action) => {
             const itemIndex = state.cartItems.findIndex((item) => item._id === action.payload._id)
+            // check availableInStock quantity
+            const availableInStock = action.payload.availableInStock;
             if (itemIndex >= 0) {
-                state.cartItems[itemIndex].cartQuantity += 1
-                toast.info(`increased ${state.cartItems[itemIndex].title} quantity`)
-            }
-            else {
-                const tempProduct = { ...action.payload, cartQuantity: 1 }
-                state.cartItems.push(tempProduct)
-                const toastId = toast.loading('Adding')
-                toast.success(`${action.payload.title} added to cart`, { id: toastId, duration: 2000 })
+                if (state.cartItems[itemIndex].cartQuantity < availableInStock) {
+                    state.cartItems[itemIndex].cartQuantity += 1;
+                    toast.info(`Increased ${state.cartItems[itemIndex].title} quantity`);
+                } else {
+                    toast.error(`Cannot add more than ${availableInStock} of ${state.cartItems[itemIndex].title}`);
+                }
+            } else {
+                if (availableInStock > 0) {
+                    const tempProduct = { ...action.payload, cartQuantity: 1 };
+                    state.cartItems.push(tempProduct);
+                    const toastId = toast.loading('Adding');
+                    toast.success(`${action.payload.title} added to cart`, { id: toastId, duration: 2000 });
+                } else {
+                    toast.error(`${action.payload.title} is out of stock`);
+                }
             }
             // this.getTotal(state);
         },
