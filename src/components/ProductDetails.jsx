@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 
 import { addToCart } from "@/redux/features/cart/cartSlice";
 import { useDispatch } from "react-redux";
+import ProductRating from "./ProductRating";
 
 
 const ProductDetails = () => {
@@ -106,9 +107,16 @@ const ProductDetails = () => {
                     <div>
                         <p className="xl:pr-48 font-semibold lg:leading-tight leading-normal text-paste mt-7">{data?.data?.description}</p>
                         <p className="text-base leading-4 mt-7 text-paste">Price: <span className="text-lightGreen">${data?.data?.price}</span></p>
-                        <p className="text-base leading-4 mt-4 text-paste">Available in stock: <span className="text-lightGreen">${data?.data?.availableInStock}</span></p>
-                        <p className="text-base leading-4 mt-4 text-paste">Rating: <span className="text-lightGreen">${data?.data?.rating}</span></p>
-                        <button className="btn-green-square leading-4 mt-4" onClick={() => handleAddToCart(data?.data)}>Add To Cart</button>
+                        <p className="text-base leading-4 mt-4 text-paste">Available in stock: <span className="text-lightGreen">{data?.data?.availableInStock}</span></p>
+                        <div className="relative">
+                            <div className="text-base leading-4 mt-4 text-paste ">Rating:
+                                <div className="absolute top-7 left-10">
+                                    <ProductRating item={data?.data} />
+                                </div>
+                                {/* {data?.data?.rating} */}
+                            </div>
+                        </div>
+                        <button className="btn-green-square leading-4 mt-10" onClick={() => handleAddToCart(data?.data)}>Add To Cart</button>
                     </div>
 
                 </div>

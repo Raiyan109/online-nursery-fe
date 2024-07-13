@@ -1,21 +1,21 @@
 import { useAnimate } from "framer-motion";
 import InViewAnimation from "./InViewAnimation";
-import member1 from '@/assets/player-1.png'
-import member2 from '@/assets/player-2.png'
-import member3 from '@/assets/player-3.png'
-import member4 from '@/assets/player-4.png'
-import member5 from '@/assets/player-5.png'
-import member6 from '@/assets/player-6.png'
-import member7 from '@/assets/2.jpeg'
-import member8 from '@/assets/6.jpeg'
-import member9 from '@/assets/7.jpeg'
+import member1 from '@/assets/house plants.jpg'
+import member2 from '@/assets/outdoor plants.jpg'
+import member3 from '@/assets/pet friendly plants.jpeg'
+import member4 from '@/assets/blooms.jpg'
+import member5 from '@/assets/orchids.jpg'
+import member6 from '@/assets/planters.jpg'
+import member7 from '@/assets/outdoor plants.jpg'
+import member8 from '@/assets/blooms.jpg'
+import member9 from '@/assets/orchids.jpg'
 import InViewRight from "./InViewRight";
 
 const Members = () => {
     return (
         <div className=" px-4 py-32">
             <InViewAnimation>
-                <h1 className="text-6xl text-white font-bold pb-20 lg:px-28 px-0 text-center lg:text-left">Our Members</h1>
+                <h1 className="text-6xl text-white font-bold pb-20 lg:px-28 px-0 text-center lg:text-left">Image Gallery</h1>
             </InViewAnimation>
             {/* mx-auto max-w-7xl */}
             <div className="px-3 lg:px-32">
@@ -132,7 +132,7 @@ const LinkBox = ({ Icon, href }) => {
             className="relative grid  w-full place-content-center h-44 md:h-36"
         >
             {typeof Icon === "string" ? (
-                <img src={Icon} alt="member" className="text-xl sm:text-3xl lg:text-4xl w-40 h-40 md:w-32 md:h-32 object-contain" />
+                <img src={Icon} alt="member" className=" w-40 h-40 md:w-32 md:h-32 object-cover" />
             ) : (
                 <Icon className="text-xl sm:text-3xl lg:text-4xl" />
             )}
@@ -145,7 +145,7 @@ const LinkBox = ({ Icon, href }) => {
                 className="absolute inset-0 grid place-content-center bg-paste text-white"
             >
                 {typeof Icon === "string" ? (
-                    <img src={Icon} alt="member" className="text-xl sm:text-3xl md:text-4xl" />
+                    <img src={Icon} alt="member" className="" />
                 ) : (
                     <Icon className="text-xl sm:text-3xl md:text-4xl" />
                 )}

@@ -26,6 +26,7 @@ const cartSlice = createSlice({
                 const toastId = toast.loading('Adding')
                 toast.success(`${action.payload.title} added to cart`, { id: toastId, duration: 2000 })
             }
+            // this.getTotal(state);
         },
         removeFromCart: (state, action) => {
             const nextCartItems = state.cartItems.filter((cartItem) => cartItem._id !== action.payload._id)
