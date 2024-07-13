@@ -104,7 +104,7 @@ const ProductDetails = () => {
                     Check availability in store
                 </button> */}
                     <div>
-                        {/* <p className="xl:pr-48 text-base lg:leading-tight leading-normal text-paste mt-7">It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.</p> */}
+                        <p className="xl:pr-48 font-semibold lg:leading-tight leading-normal text-paste mt-7">{data?.data?.description}</p>
                         <p className="text-base leading-4 mt-7 text-paste">Price: <span className="text-lightGreen">${data?.data?.price}</span></p>
                         <p className="text-base leading-4 mt-4 text-paste">Available in stock: <span className="text-lightGreen">${data?.data?.availableInStock}</span></p>
                         <p className="text-base leading-4 mt-4 text-paste">Rating: <span className="text-lightGreen">${data?.data?.rating}</span></p>

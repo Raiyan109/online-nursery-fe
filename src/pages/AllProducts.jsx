@@ -22,7 +22,7 @@ const AllProducts = () => {
     const [postPerPage] = useState(10)
     const { data, isLoading } = useGetProductQuery(undefined)
 
-    const filters = ["Outdoor plants", "Blooms", "Orchids", "House plants", "Pet friendly plants"];
+    const filters = ["Outdoor plants", "Blooms", "Orchids", "House plants", "Pet friendly plants", "Decorating plant"];
 
     // Search filter
     const handleChange = (e) => {

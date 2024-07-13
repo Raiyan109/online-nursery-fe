@@ -11,7 +11,7 @@ const Products = () => {
     const [filteredItems, setFilteredItems] = useState([]);
 
 
-    let filters = ["Outdoor plants", "Blooms", "Orchids", "House plants", "Pet friendly plants"];
+    let filters = ["Outdoor plants", "Blooms", "Orchids", "House plants", "Pet friendly plants", "Decorating plant"];
 
 
 
