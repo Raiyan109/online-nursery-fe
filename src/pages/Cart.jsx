@@ -26,6 +26,13 @@ const Cart = () => {
         dispatch(getTotal())
     }, [cart, dispatch])
 
+    // Window refresh
+    if (cart) {
+        window.onbeforeunload = function () {
+            return "Data will be lost if you leave the page, are you sure?";
+        };
+    }
+
 
     const handleRemoveFromCart = (cartItem) => {
         dispatch(removeFromCart(cartItem));
