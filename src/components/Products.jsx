@@ -4,11 +4,14 @@ import InViewRight from "./InViewRight";
 import Product from "./Product";
 import Loading from "./Loading";
 import { useEffect, useState } from "react";
+import Pagination from "./Pagination";
 
 const Products = () => {
     const { data, isLoading } = useGetProductQuery(undefined)
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postPerPage] = useState(5)
 
 
     let filters = ["Outdoor plants", "Blooms", "Orchids", "House plants", "Pet friendly plants", "Decorating plant"];
@@ -39,6 +42,10 @@ const Products = () => {
         }
     };
 
+    const lastPostIndex = currentPage * postPerPage
+    const firstPostIndex = lastPostIndex - postPerPage
+    const currentResults = filteredItems.slice(firstPostIndex, lastPostIndex);
+
     if (isLoading) {
         return <div>
             <Loading />
@@ -67,13 +74,14 @@ const Products = () => {
                 <div className="py-10 flex justify-center items-center">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-14">
                         {/* data?.data?.slice(0, 5) */}
-                        {filteredItems?.map((item) => (
+                        {currentResults?.map((item) => (
                             <Product key={item?._id} item={item} />
                         ))}
                     </div>
 
                 </div>
             </InViewRight>
+            <Pagination totalPosts={data?.data?.length} postsPerPage={postPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} />
         </div>
     )
 }
