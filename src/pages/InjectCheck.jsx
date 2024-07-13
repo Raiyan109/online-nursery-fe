@@ -1,9 +1,16 @@
-import React from 'react'
+import { ElementsConsumer } from '@stripe/react-stripe-js';
+import CheckoutForm from '../pages/CheckoutForm';
 
 const InjectCheck = () => {
     return (
-        <div>InjectCheck</div>
-    )
-}
+        <div>
+            <ElementsConsumer>
+                {({ stripe, elements }) => (
+                    <CheckoutForm stripe={stripe} elements={elements} />
+                )}
+            </ElementsConsumer>
+        </div>
+    );
+};
 
-export default InjectCheck
+export default InjectCheck;

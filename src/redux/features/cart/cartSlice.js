@@ -23,7 +23,8 @@ const cartSlice = createSlice({
             else {
                 const tempProduct = { ...action.payload, cartQuantity: 1 }
                 state.cartItems.push(tempProduct)
-                toast.success(`${action.payload.title} added to cart`)
+                const toastId = toast.loading('Adding')
+                toast.success(`${action.payload.title} added to cart`, { id: toastId, duration: 2000 })
             }
         },
         removeFromCart: (state, action) => {
