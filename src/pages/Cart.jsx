@@ -12,6 +12,7 @@ import { toast } from "sonner";
 import { useDispatch, useSelector } from "react-redux";
 
 
+
 const Cart = () => {
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
@@ -38,17 +39,29 @@ const Cart = () => {
         dispatch(addToCart(cartItem));
     };
 
-    const onSubmit = (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault();
-        // No need for id, because you will get from mongodb
+
         const orderDetails = {
             name,
             phone,
-            address
+            address,
+            items: cart.cartItems
         };
-        createOrder(orderDetails)
-        toast.success('Order created')
-        navigate('/order')
+        try {
+            await createOrder(orderDetails).unwrap();
+            toast.success('Order created');
+
+            // Decrease stock levels in the Redux state
+            cart.cartItems.forEach((item) => {
+                dispatch(decreaseCart({ _id: item._id, quantity: item.cartQuantity }));
+            });
+
+            // dispatch(resetCart());
+            navigate('/order');
+        } catch (error) {
+            toast.error('Failed to create order');
+        }
     };
 
     return (
