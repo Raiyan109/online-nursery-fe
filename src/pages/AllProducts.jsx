@@ -7,7 +7,7 @@ import Loading from "@/components/Loading"
 import Pagination from "@/components/Pagination"
 import { useEffect, useState } from "react"
 import FilterSearch from "@/components/FilterSearch"
-
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 
 
@@ -17,10 +17,13 @@ const AllProducts = () => {
     const [maxPrice, setMaxPrice] = useState(1000)
     const [selectedFilters, setSelectedFilters] = useState([]);
     const [filteredItems, setFilteredItems] = useState([]);
+    const [titles, setTitles] = useState([])
+    const [sorted, setSorted] = useState({ sorted: "title", reversed: false });
     // States for pagination
     const [currentPage, setCurrentPage] = useState(1)
     const [postPerPage] = useState(10)
     const { data, isLoading } = useGetProductQuery(undefined)
+
 
     const filters = ["Outdoor plants", "Blooms", "Orchids", "House plants", "Pet friendly plants", "Decorating plant"];
 
@@ -35,6 +38,36 @@ const AllProducts = () => {
         setMinPrice(min);
         setMaxPrice(max);
     };
+
+    // For updating titles when data is available
+    useEffect(() => {
+        if (data?.data) {
+            setTitles(filteredItems);
+        }
+    }, [filteredItems, data?.data]);
+
+    // Sort
+    const sortByName = () => {
+        const titlesCopy = [...titles];
+        titlesCopy.sort((titleA, titleB) => {
+            if (sorted.reversed) {
+                return titleA.title.localeCompare(titleB.title);
+            }
+            return titleB.title.localeCompare(titleA.title);
+        });
+        setTitles(titlesCopy);
+        setSorted({ sorted: "title", reversed: !sorted.reversed });
+
+    };
+
+    // Arrow for Sort
+    const renderArrow = () => {
+        if (sorted.reversed) {
+            return <FaArrowUp />;
+        }
+        return <FaArrowDown />;
+    };
+
     const handleFilterButtonClick = (selectedCategory) => {
         if (selectedFilters.includes(selectedCategory)) {
             const updatedFilters = selectedFilters.filter((el) => el !== selectedCategory);
@@ -48,6 +81,7 @@ const AllProducts = () => {
         filterItems();
     }, [selectedFilters, searchText, data, minPrice, maxPrice]);
 
+    // All filter logic
     const filterItems = () => {
         let tempItems = data?.data || [];
 
@@ -71,7 +105,10 @@ const AllProducts = () => {
         );
 
         setFilteredItems(tempItems);
+
     };
+
+    // Loading
     if (isLoading) {
         return <div>
             <Loading />
@@ -80,7 +117,7 @@ const AllProducts = () => {
     // Logic for pagination
     const lastPostIndex = currentPage * postPerPage
     const firstPostIndex = lastPostIndex - postPerPage
-    const currentResults = filteredItems.slice(firstPostIndex, lastPostIndex);
+    const currentResults = titles.slice(firstPostIndex, lastPostIndex);
 
     return (
         <div className="py-32">
@@ -90,7 +127,7 @@ const AllProducts = () => {
                     <h1 className="text-6xl text-white font-bold pb-10 lg:px-28 px-0 text-center lg:text-left">All Plants</h1>
                 </InViewAnimation>
                 <InViewRight>
-                    <FilterSearch searchText={searchText} handleChange={handleChange} setSearchText={setSearchText} minPrice={minPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} setMinPrice={setMinPrice} handlePriceChange={handlePriceChange} />
+                    <FilterSearch searchText={searchText} handleChange={handleChange} setSearchText={setSearchText} minPrice={minPrice} maxPrice={maxPrice} setMaxPrice={setMaxPrice} setMinPrice={setMinPrice} handlePriceChange={handlePriceChange} sortByName={sortByName} renderArrow={renderArrow} sorted={sorted} />
                 </InViewRight>
             </div>
             <div className="buttons-container">
