@@ -3,6 +3,9 @@
 
 
 # Online Nursery Website
+![Online Nursery Website Hero](/src/assets/online-nursery-hero.png "Online Nursery Website Hero")
+![Online Nursery Website Plants](/src/assets/online-nursery-plants.png "Online Nursery Website Plants")
+![Online Nursery Website Dashboard](/src/assets/online-nursery-dashboard.png "Online Nursery Website Dashboard")
 
 ## Introduction
 
