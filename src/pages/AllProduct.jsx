@@ -87,7 +87,7 @@ const TiltCard = ({ item }) => {
                     backgroundPosition: "center",
                 }}
                 onClick={goToProductDetailsPage}
-                className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
+                className="absolute inset-1 grid place-content-center rounded-xl bg-white shadow-lg"
             >
 
                 {/* <FiMousePointer
