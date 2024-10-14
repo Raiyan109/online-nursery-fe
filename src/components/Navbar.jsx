@@ -6,11 +6,14 @@ import AnimatedHamburgerButton from "./AnimatedHamburgerButton";
 
 import Search from "./Search";
 import { useSelector } from "react-redux";
+import { Heart } from "lucide-react";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [color, setColor] = useState(false)
     const { cartTotalQuantity } = useSelector((state) => state.cart)
+
+    const savedItems = useSelector((state) => state.saveForLater.savedItems)
 
     const navLinks = [
         { href: "/", label: "Home" },
@@ -80,7 +83,7 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-                <div className="flex md:items-center items-start gap-x-5 gap-y-2 flex-wrap md:flex-row flex-col text-base font-medium text-neutral-800">
+                <div className="flex md:items-center items-start gap-x-2 gap-y-2 flex-wrap md:flex-row flex-col text-base font-medium text-neutral-800">
                     <div className="">
                         <Search />
                     </div>
@@ -89,6 +92,14 @@ const Navbar = () => {
                             <button className="inline-flex text-primary border-0 py-2 px-6 focus:outline-none text-lightGreen hover:text-paste rounded text-lg relative">
                                 <FiShoppingCart />
                                 <span className="bg-lightGreen text-black text-xs rounded-full w-4 h-4 flex justify-center items-center absolute top-0 right-3">{cartTotalQuantity}</span>
+                            </button>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to='/save-for-later'>
+                            <button className="inline-flex text-primary border-0 py-2 px-3 focus:outline-none text-lightGreen hover:text-paste rounded text-lg relative">
+                                <Heart />
+                                <span className="bg-lightGreen text-black text-xs rounded-full w-4 h-4 flex justify-center items-center absolute top-0 right-3">{savedItems.length}</span>
                             </button>
                         </Link>
                     </div>

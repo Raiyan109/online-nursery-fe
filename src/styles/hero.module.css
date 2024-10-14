@@ -32,7 +32,7 @@ section {
 .box {
     position: relative;
     justify-content: center;
-    min-height: calc(100vh - 125px);
+    min-height: calc(100vh - 160px);
     /* min-height: 100vh; */
     color: #fff;
     text-align: center;

@@ -4,15 +4,26 @@ import Loading from "./Loading";
 import Navbar from "./Navbar";
 
 import { addToCart } from "@/redux/features/cart/cartSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ProductRating from "./ProductRating";
+import { Heart } from "lucide-react";
+import { addToSavedItem, removeSavedItem } from "../redux/features/saveForLater/saveForLater";
 
 
 const ProductDetails = () => {
     const { id } = useParams();
     const { data, isLoading } = useGetProductDetailsQuery(id);
+
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    const savedItems = useSelector((state) => state.saveForLater.savedItems)
+    console.log(savedItems, 'savedItems');
+
+
+    // Check if the facility is already in the wishlist
+    const isInSavedItems = savedItems.some(item => item._id === data?.data?._id);
+    console.log(isInSavedItems, 'isInSavedItems');
 
     if (isLoading) {
         return <div>
@@ -24,6 +35,17 @@ const ProductDetails = () => {
         dispatch(addToCart(item))
         navigate('/cart')
     }
+
+    const handleAddToSavedItems = (item) => {
+        console.log(item);
+        dispatch(addToSavedItem(item))
+
+        if (isInSavedItems) {
+            dispatch(removeSavedItem(item));
+        } else {
+            dispatch(addToSavedItem(item))
+        }
+    };
 
     return (
         <>
@@ -117,7 +139,25 @@ const ProductDetails = () => {
                                 {/* {data?.data?.rating} */}
                             </div>
                         </div>
-                        <button className="btn-green-square leading-4 mt-10" onClick={() => handleAddToCart(data?.data)}>Add To Cart</button>
+                        <div className="flex items-center gap-5">
+                            <button className="btn-green-square leading-4 mt-10" onClick={() => handleAddToCart(data?.data)}>Add To Cart</button>
+                            <div className="btn-white-square leading-4 mt-10 flex items-center gap-5 cursor-pointer"
+                                onClick={() => handleAddToSavedItems(data?.data)}>
+                                {isInSavedItems ? (
+                                    <div className="flex items-center gap-5">
+                                        Saved
+                                        <Heart size={16} fill="#802bb1" />
+                                    </div>
+                                ) : (
+                                    <div className="flex items-center gap-5">
+                                        Save
+                                        <Heart size={16} />
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+
+
                     </div>
 
                 </div>

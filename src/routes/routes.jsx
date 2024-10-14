@@ -8,6 +8,7 @@ import AddProduct from "../components/AddProduct";
 import Cart from "../pages/Cart";
 import OrderSummary from "../pages/OrderSummary";
 import Success from "../pages/Success";
+import SaveForLater from "../pages/saveForLater/SaveForLater";
 
 
 const routes = createBrowserRouter([
@@ -48,6 +49,10 @@ const routes = createBrowserRouter([
     {
         path: '/success',
         element: <Success />
+    },
+    {
+        path: '/save-for-later',
+        element: <SaveForLater />
     },
 ])
 

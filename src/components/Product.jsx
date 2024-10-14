@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import ProductRating from "./ProductRating";
 import { useDispatch } from "react-redux";
 
+
 // eslint-disable-next-line react/prop-types
 const Product = ({ item }) => {
     return (
@@ -32,6 +33,11 @@ const TiltCard = ({ item }) => {
     const handleAddToCart = (item) => {
         dispatch(addToCart(item))
     }
+
+
+
+
+
 
     const navigate = useNavigate()
 
@@ -103,6 +109,7 @@ const TiltCard = ({ item }) => {
           }}
           className="mx-auto text-4xl absolute bottom-5 left-3"
         /> */}
+
 
                 <p
                     style={{
