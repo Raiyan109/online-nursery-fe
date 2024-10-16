@@ -1,0 +1,183 @@
+[
+    {
+      "image": "https://www.mapro.com/cdn/shop/articles/colorful-flower-with-big-leaves.jpg",
+      "title": "Bird of Paradise",
+      "price": 85,
+      "rating": "4.8",
+      "category": ["Outdoor plants"],
+      "availableInStock": 10,
+      "description": "A tropical plant known for its striking flowers resembling birds in flight."
+    },
+    {
+      "image": "https://www.seasol.com.au/wp-content/uploads/2023/03/AdobeStock_343807811.website.jpg",
+      "title": "Japanese Maple",
+      "price": 120,
+      "rating": "4.9",
+      "category": ["Outdoor plants"],
+      "availableInStock": 5,
+      "description": "Beautiful red-leafed tree that adds elegance to any outdoor setting."
+    },
+    {
+      "image": "https://cdn.shopify.com/s/files/1/0263/0444/6517/files/DSC_0415_reduced_1024x1024.jpg",
+      "title": "Lavender",
+      "price": 25,
+      "rating": "4.7",
+      "category": ["Outdoor plants"],
+      "availableInStock": 20,
+      "description": "Aromatic herb that attracts pollinators and fills the air with a calming scent."
+    },
+    {
+      "image": "https://www.mapro.com/cdn/shop/articles/bushy-red-flower-with-protruding-center.jpg",
+      "title": "Hibiscus",
+      "price": 45,
+      "rating": "4.6",
+      "category": ["Outdoor plants"],
+      "availableInStock": 12,
+      "description": "Bright flowering shrub that thrives in warm outdoor environments."
+    },
+    {
+      "image": "https://hips.hearstapps.com/hmg-prod/images/jade-plant-lucky-plant-money-plant-or-money-tree-royalty-free-image-1691772399.jpg",
+      "title": "Jade Plant",
+      "price": 30,
+      "rating": "4.5",
+      "category": ["Outdoor plants"],
+      "availableInStock": 15,
+      "description": "Popular succulent with glossy, deep green leaves, known for bringing good luck."
+    },
+    {
+      "image": "https://uscitrusnursery.com/cdn/shop/articles/lemon-tree_900x.jpg",
+      "title": "Lemon Tree",
+      "price": 75,
+      "rating": "4.6",
+      "category": ["Outdoor plants"],
+      "availableInStock": 8,
+      "description": "Fruit-bearing tree that produces aromatic lemons, perfect for outdoor spaces."
+    },
+    {
+      "image": "https://deltagardens.com/cdn/shop/products/Anti-FungalSet_Rosemary_505_grande.jpg",
+      "title": "Rosemary",
+      "price": 20,
+      "rating": "4.7",
+      "category": ["Outdoor plants"],
+      "availableInStock": 18,
+      "description": "Fragrant herb that enhances culinary dishes and grows well outdoors."
+    },
+    {
+      "image": "https://www.edecor.com.bd/wp-content/uploads/2022/07/Bougainvillea-1-4.jpg",
+      "title": "Bougainvillea",
+      "price": 55,
+      "rating": "4.8",
+      "category": ["Outdoor plants"],
+      "availableInStock": 7,
+      "description": "A vibrant flowering plant that adds color to gardens and outdoor walls."
+    },
+    {
+      "image": "https://www.rural21.com/fileadmin/_processed_/7/4/csm_Science_40_Aloe_c89d742082.jpg",
+      "title": "Aloe Vera",
+      "price": 35,
+      "rating": "4.5",
+      "category": ["Outdoor plants"],
+      "availableInStock": 22,
+      "description": "A low-maintenance succulent known for its healing properties."
+    },
+    {
+      "image": "https://gardeningsolutions.ifas.ufl.edu/images/plants/shrubs/oleander_pink.jpg",
+      "title": "Oleander",
+      "price": 65,
+      "rating": "4.6",
+      "category": ["Outdoor plants"],
+      "availableInStock": 10,
+      "description": "An evergreen shrub with showy flowers that tolerates hot climates."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Meyer Lemon",
+      "price": 90,
+      "rating": "4.7",
+      "category": ["Outdoor plants"],
+      "availableInStock": 5,
+      "description": "A fruiting plant with unique, fragrant lemons, ideal for patios."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Gardenia",
+      "price": 50,
+      "rating": "4.6",
+      "category": ["Outdoor plants"],
+      "availableInStock": 13,
+      "description": "A beautiful flowering shrub with fragrant white flowers."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Camellia",
+      "price": 60,
+      "rating": "4.5",
+      "category": ["Outdoor plants"],
+      "availableInStock": 12,
+      "description": "A flowering shrub with lovely blooms in various colors, perfect for shaded areas."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Hydrangea",
+      "price": 70,
+      "rating": "4.8",
+      "category": ["Outdoor plants"],
+      "availableInStock": 8,
+      "description": "A flowering plant with large, colorful blooms that brighten any garden."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Bamboo Palm",
+      "price": 45,
+      "rating": "4.5",
+      "category": ["Outdoor plants"],
+      "availableInStock": 10,
+      "description": "An ornamental palm that adds a tropical touch to outdoor spaces."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Azalea",
+      "price": 55,
+      "rating": "4.7",
+      "category": ["Outdoor plants"],
+      "availableInStock": 9,
+      "description": "A flowering shrub with vibrant pink blooms, perfect for spring gardens."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Golden Pothos",
+      "price": 25,
+      "rating": "4.6",
+      "category": ["Outdoor plants"],
+      "availableInStock": 17,
+      "description": "A hardy, trailing plant known for its lush green leaves with golden variegation."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Snake Plant",
+      "price": 35,
+      "rating": "4.6",
+      "category": ["Outdoor plants"],
+      "availableInStock": 16,
+      "description": "A low-maintenance plant known for its upright, sword-like leaves."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Fiddle Leaf Fig",
+      "price": 95,
+      "rating": "4.7",
+      "category": ["Outdoor plants"],
+      "availableInStock": 4,
+      "description": "An eye-catching indoor and outdoor plant with large, vibrant leaves."
+    },
+    {
+      "image": "https://i.ibb.co/ZzCj22H/outdoor-plants.jpg",
+      "title": "Creeping Jenny",
+      "price": 20,
+      "rating": "4.5",
+      "category": ["Outdoor plants"],
+      "availableInStock": 25,
+      "description": "A fast-growing ground cover that creates a lush green carpet effect."
+    }
+  ]
+  

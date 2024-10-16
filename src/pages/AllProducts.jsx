@@ -21,7 +21,7 @@ const AllProducts = () => {
     const [sorted, setSorted] = useState({ sorted: "title", reversed: false });
     // States for pagination
     const [currentPage, setCurrentPage] = useState(1)
-    const [postPerPage] = useState(10)
+    const [postPerPage] = useState(8)
     const { data, isLoading } = useGetProductQuery(undefined)
 
 

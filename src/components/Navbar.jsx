@@ -40,10 +40,10 @@ const Navbar = () => {
     window.addEventListener('scroll', changeColor)
 
     return (
-        <div className={color ? 'w-full h-[8ch] flex items-center md:flex-row lg:px-28 md:px-16 sm:px-7 px-4 py-4 fixed top-0 z-50 bg-[rgba(0,0,0,0.85)] transition-all' : 'w-full h-[7ch] flex items-center md:flex-row lg:px-28 md:px-16 sm:px-7 px-4 py-4 fixed top-0 z-50'}>
+        <div className={color ? 'w-full h-[8ch] flex items-center md:flex-row lg:px-28 md:px-16 px-3 py-4 fixed top-0 z-50 bg-[rgba(0,0,0,0.85)] transition-all' : 'w-full h-[7ch] flex items-center md:flex-row lg:px-28 md:px-16 sm:px-7 px-4 py-4 fixed top-0 z-50'}>
             {/* Logo section */}
-            <Link to="/" className="mr-16">
-                <img src={Logo} alt="logo" className="w-28 h-auto object-contain" />
+            <Link to="/" className="mr-3 lg:mr-16">
+                <img src={Logo} alt="logo" className="w-16 lg:w-28 h-auto object-contain" />
             </Link>
 
             {/* Toggle button */}
@@ -69,7 +69,7 @@ const Navbar = () => {
                     : "hidden"
                     } flex-1 md:flex flex-col md:flex-row gap-x-5 gap-y-2 md:items-center md:p-0 sm:p-4 p-4 justify-between md:bg-transparent bg-darkBrown md:shadow-none shadow-md rounded-md opacity-95`}
             >
-                <ul className="list-none flex md:items-center items-start gap-x-5 gap-y-1 flex-wrap md:flex-row flex-col text-lightGreen font-medium">
+                <ul className="list-none flex md:items-center items-start gap-x-5 gap-y-1 md:flex-row flex-col text-lightGreen font-medium">
                     {navLinks.map((link, index) => (
                         <li key={index}>
                             <Link
@@ -83,7 +83,7 @@ const Navbar = () => {
                     ))}
                 </ul>
 
-                <div className="flex md:items-center items-start gap-x-2 gap-y-2 flex-wrap md:flex-row flex-col text-base font-medium text-neutral-800">
+                <div className="flex md:items-center items-start gap-x-0 lg:gap-x-2 gap-y-2  md:flex-row flex-col text-base font-medium text-neutral-800">
                     <div className="">
                         <Search />
                     </div>
